@@ -20,6 +20,7 @@ public class Television {
 		this.price = price;
 	}
 	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -28,7 +29,6 @@ public class Television {
 		long temp;
 		temp = Double.doubleToLongBits(price);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + (threeDenabled ? 1231 : 1237);
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
@@ -48,8 +48,6 @@ public class Television {
 		} else if (!company.equals(other.company))
 			return false;
 		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
-			return false;
-		if (threeDenabled != other.threeDenabled)
 			return false;
 		if (type == null) {
 			if (other.type != null)

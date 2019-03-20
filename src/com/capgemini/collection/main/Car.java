@@ -1,6 +1,8 @@
 package com.capgemini.collection.main;
 
-public class Car {
+import java.lang.Comparable;
+
+public class Car implements Comparable<Car> {
 
 	private String make;
 	private String model;
@@ -82,6 +84,19 @@ public class Car {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
+	@Override
+	public int compareTo(Car car) {
+		int result = this.make.compareTo(car.make);
+		
+		if(result<0)
+			return -1;
+		else if(result>0)
+			return 1;
+		else
+			return 0;
+	}
+	
 	
 	
 	
